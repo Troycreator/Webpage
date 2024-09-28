@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Connections</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none; /* Firefox */
+    background-color: #fff;
+    background-image: url('arrow.png'); /* Custom arrow image */
+    background-position: right 10px center; /* Position arrow */
+    background-repeat: no-repeat;
+    padding-right: 30px; /* Space for arrow */
+}
+
+select:hover, select:focus {
+    border-color: #888; /* Highlight on hover/focus */
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-right: 30px; /* Space for arrow */
+}
+
+input[type="text"]:focus {
+    border-color: #888; /* Highlight on focus */
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+        hero {
+    background-image: url("stock.jpg");
+    height: 650px;
+    background-size: cover ;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #0056b3;
+}
+
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.get-started-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.get-started-button:hover {
+    background-color: #0056b3;
+}
+    header {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .nav-links {
+        list-style-type: none;
+
+    }
+
+    .nav-links li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #333;
+    }
+    .nav-links li a:hover {
+        color:blue;
+    }
+    /* General.css - For mobile responsiveness */
+    @media only screen and (max-width: 600px) {
+        body {
+            font-size: 14px;
+            padding: 0 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 1.5em;
+        }
+
+        .get-started-button {
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+
+        section h2 {
+            font-size: 1.4em;
+        }
+
+        nav ul.nav-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul.nav-links li {
+            margin: 10px 0;
+        }
+        
+        .form label, .form select, .form input, .form textarea {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        footer p {
+            font-size: 0.8em;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Easy Connections</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Login">Login</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#find-universities">Find Universities</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Easy Connections</h1>
+            <p>Your pathway to discovering the best universities based on your location and program of choice</p>
+            <a href="Demo7.html" class="get-started-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our website assists students in discovering universities based on their preferred location and program of study. We aim to simplify the search process and provide valuable information to make informed decisions.</p>
+    </section>
+
+    <section id="find-universities">
+        <h2>Find Universities</h2>
+        <form>
+            <label for="city">Preferred City:</label>
+            <select id="city" name="city">
+                <option value="">Select a city...</option>
+                <option value="Cairo, Egypt">Cairo, Egypt</option>
+                <option value="Johannesburg, South Africa">Johannesburg, South Africa</option>
+                <option value="Pretoria, South Africa">Pretoria, South Africa</option>
+                <option value="Nairobi, Kenya">Nairobi, Kenya</option>
+                <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                <option value="Casablanca, Morocco">Casablanca, Morocco</option>
+                <option value="Accra, Ghana">Accra, Ghana</option>
+                <option value="Dakar, Senegal">Dakar, Senegal</option>
+                <option value="Dar es Salaam, Tanzania">Dar es Salaam, Tanzania</option>
+                <option value="Addis Ababa, Ethiopia">Addis Ababa, Ethiopia</option>
+                <option value="Luanda, Angola">Luanda, Angola</option>
+                <option value="Abidjan, Côte d'Ivoire">Abidjan, Côte d'Ivoire</option>
+                <option value="Maputo, Mozambique">Maputo, Mozambique</option>
+                <option value="Kampala, Uganda">Kampala, Uganda</option>
+                <option value="Kigali, Rwanda">Kigali, Rwanda</option>
+                <option value="Windhoek, Namibia">Windhoek, Namibia</option>
+            </select>
+
+            <label for="program">Program of Choice:</label>
+            <select id="program" name="program">
+                <option value="">Select a program...</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Medicine">Medicine</option>
+                <option value="Law">Law</option>
+                <option value="Psychology">Psychology</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Environmental Science">Environmental Science</option>
+                <option value="Economics">Economics</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Political Science">Political Science</option>
+                <option value="Nursing">Nursing</option>
+                <option value="Physics">Physics</option>
+                <option value="Mathematics">Mathematics</option>
+            </select>
+
+            <button type="button" onclick="findUniversities()">Search</button>
+        </form>
+        <div id="results"></div>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <p>"University Finder helped me find the perfect program in Nairobi. Highly recommended!"</p>
+        <p>"The search feature is intuitive and provides accurate results. Great job!"</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 University Finder. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const database = {
+    universities: [
+        { 
+            name: "American University in Cairo",
+            city: "Cairo, Egypt", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.aucegypt.edu"
+        },
+        {
+            name: "German University in Cairo",
+            city: "Cairo, Egypt", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.guc.edu.eg"
+        },
+        {
+            name: "British University in Egypt",
+            city: "Cairo, Egypt", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.bue.edu.eg"
+        },
+        {
+            name: "Modern Sciences and Arts University",
+            city: "Cairo, Egypt", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.msa.edu.eg"
+        },
+        { 
+            name: "University of Johannesburg",
+            city: "Johannesburg, South Africa", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.uj.ac.za"
+        },
+        {
+            name: "University of the Witwatersrand",
+            city: "Johannesburg, South Africa",
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.wits.ac.za"
+        },
+        {
+            name: "Vaal University of Technology",
+            city: "Johannesburg, South Africa",
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.vut.ac.za"
+        },
+        {
+            name: "University of Pretoria",
+            city: "Pretoria, South Africa",
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.up.ac.za"
+        },
+        {
+            name: "Tshwane University of Technology",
+            city: "Pretoria, South Africa",
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.tut.ac.za"
+        },
+        { 
+            name: "University of Nairobi", 
+            city: "Nairobi, Kenya", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.uonbi.ac.ke"
+        },
+        { 
+            name: "KCA University", 
+            city: "Nairobi, Kenya", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.kca.ac.ke"
+        },
+        { 
+            name: "Daystar University", 
+            city: "Nairobi, Kenya", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.daystar.ac.ke"
+        },
+        { 
+            name: "United States International University Africa", 
+            city: "Nairobi, Kenya", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.usiu.ac.ke"
+        },
+        { 
+            name: "University of Lagos", 
+            city: "Lagos, Nigeria", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.unilag.edu.ng"
+        },
+        { 
+            name: "Lagos State University", 
+            city: "Lagos, Nigeria", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.lasu.edu.ng"
+        },
+        { 
+            name: "Pan-Atlantic University", 
+            city: "Lagos, Nigeria", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.panatlantic.edu.ng"
+        },
+        { 
+            name: "University of Casablanca", 
+            city: "Casablanca, Morocco", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.ucd.ma"
+        },
+        { 
+            name: "Hassan II University", 
+            city: "Casablanca, Morocco", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.univh2c.ma"
+        },
+        { 
+            name: "University of Ghana", 
+            city: "Accra, Ghana", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.ug.edu.gh"
+        },
+        { 
+            name: "Accra Institute of Technology", 
+            city: "Accra, Ghana", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.ait.edu.gh"
+        },
+        { 
+            name: "University of Dakar", 
+            city: "Dakar, Senegal", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.ucad.sn"
+        },
+        { 
+            name: "International School of Dakar", 
+            city: "Dakar, Senegal", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.isd.sn"
+        },
+        { 
+            name: "University of Dar es Salaam", 
+            city: "Dar es Salaam, Tanzania", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.udsm.ac.tz"
+        },
+        { 
+            name: "University of Addis Ababa", 
+            city: "Addis Ababa, Ethiopia", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.aau.edu.et"
+        },
+        { 
+            name: "University of Luanda", 
+            city: "Luanda, Angola", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.ul.edu.ao"
+        },
+        { 
+            name: "University of Abidjan", 
+            city: "Abidjan, Côte d'Ivoire", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.univ-abidjan.ci"
+        },
+        { 
+            name: "University of Maputo", 
+            city: "Maputo, Mozambique", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.unilurimo.ac.mz"
+        },
+        { 
+            name: "University of Kampala", 
+            city: "Kampala, Uganda", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.mk.ac.ug"
+        },
+        { 
+            name: "University of Kigali", 
+            city: "Kigali, Rwanda", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.unik.ac.rw"
+        },
+        { 
+            name: "University of Namibia", 
+            city: "Windhoek, Namibia", 
+            programs: ["Business Administration","Nursing","Graphic Design","Marketing","Environmental Science","Political Science", "Computer Science","Economics","Engineering", "Psychology", "Medicine","Mathematics", "Physics", "Law"],
+            url: "https://www.unam.edu.na"
+        }
+    ]
+};
+
+function findUniversities() {
+    const citySelect = document.getElementById("city");
+    const programSelect = document.getElementById("program");
+    const resultsDiv = document.getElementById("results");
+    const city = citySelect.value;
+    const program = programSelect.value;
+    let html = "<ul>";
+
+    const filteredUniversities = database.universities.filter(university => university.city === city && university.programs.includes(program));
+    
+    if (filteredUniversities.length > 0) {
+        filteredUniversities.forEach(university => {
+            html += `<li><a href="${university.url}" target="_blank">${university.name}</a></li>`;
+        });
+    } else {
+        html += "<li>No universities found</li>";
+    }
+
+    html += "</ul>";
+    resultsDiv.innerHTML = html;
+}
+    </script>
+</body>
+</html>
+
